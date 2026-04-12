@@ -7,29 +7,12 @@
   <link rel="shortcut icon" href="TemplateData/favicon.ico">
   <link rel="stylesheet" href="TemplateData/style.css">
 
-  <!-- ADDED CSS: This stops scrolling and scales the game to fit the window -->
+  <!-- FIX PART 1: Paste this style block right before the </head> tag -->
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      overflow: hidden; /* Completely disables scrollbars */
-      background-color: #231F20;
-    }
-    #unity-container {
-      width: 100vw !important;
-      height: 100vh !important;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    #unity-canvas {
-      max-width: 100% !important;
-      max-height: 100% !important;
-      object-fit: contain !important; /* Keeps your game's aspect ratio without stretching */
-    }
-    #unity-footer {
-      display: none; /* Hidden to prevent it from causing vertical scrolling */
-    }
+    body { margin: 0; padding: 0; overflow: hidden !important; background-color: #231F20; }
+    #unity-container { width: 100vw !important; height: 100vh !important; display: flex; justify-content: center; align-items: center; }
+    #unity-canvas { max-width: 100% !important; max-height: 100% !important; object-fit: contain !important; }
+    #unity-footer { display: none !important; }
   </style>
 </head>
 <body>
@@ -92,8 +75,7 @@
     document.querySelector("#unity-container").className = "unity-mobile";
     canvas.className = "unity-mobile";
   } else {
-    // FIXED CODE: 
-    // We commented out the hardcoded pixel sizes so our CSS from the <head> takes over!
+    // FIX PART 2: Add two slashes (//) in front of these two lines to comment them out!
     // canvas.style.width = "1920px";
     // canvas.style.height = "1080px";
   }
